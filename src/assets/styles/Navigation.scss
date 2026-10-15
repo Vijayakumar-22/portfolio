@@ -1,4 +1,3 @@
-
 /* Fixed navigation bar */
 #navigation {
     z-index: 1100;
@@ -10,6 +9,7 @@
 
     .navigation-bar {
         display: flex;
+        flex-direction: row;
         align-items: center;
         width: 100%;
         min-height: 64px;
@@ -18,17 +18,27 @@
         padding: 0 24px;
     }
 
+    /* Mobile menu button */
     .mobile-menu-button {
         display: none;
+        align-items: center;
+        justify-content: center;
         flex-shrink: 0;
         color: #222;
+        margin: 0;
     }
 
+    /* Theme toggle button */
     .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         flex-shrink: 0;
         color: #222;
+        margin: 0;
     }
 
+    /* Desktop navigation links */
     .desktop-nav-links {
         display: flex;
         align-items: center;
@@ -77,31 +87,44 @@
         }
     }
 
+    /* Scrolled navbar */
     &.scrolled {
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
 }
 
-/* Light theme */
+/* =========================================
+LIGHT THEME
+========================================= */
+
 .light-mode #navigation {
-    background-color: #fff;
+background-color: #fff;
 
-    .nav-link,
-    .theme-toggle,
-    .mobile-menu-button {
-        color: #222;
-    }
+.nav-link,
+.theme-toggle,
+.mobile-menu-button {
+    color: #222;
+}
 
-    .nav-link::after {
-        background-color: #8f123b;
-    }
+.nav-link::after {
+    background-color: #000;
+}
 
-    .nav-link:hover {
-        color: #8f123b;
+.nav-link:hover {
+    color: #000;
+    background: transparent;
+
+    &::after {
+        background-color: #000;
     }
 }
 
-/* Dark theme */
+}
+
+/* =========================================
+   DARK THEME
+========================================= */
+
 .dark-mode #navigation {
     background-color: #1e1e1e;
 
@@ -117,6 +140,7 @@
 
     .nav-link:hover {
         color: #fff;
+        background: transparent;
 
         &::after {
             background-color: #fff;
@@ -128,7 +152,10 @@
     }
 }
 
-/* Mobile drawer base */
+/* =========================================
+   MOBILE DRAWER BASE
+========================================= */
+
 .mobile-navigation-drawer {
     .navigation-bar-responsive {
         min-height: 100%;
@@ -153,6 +180,8 @@
 
     .mobile-nav-link {
         position: relative;
+        display: flex;
+        align-items: center;
         justify-content: center;
         min-height: 52px;
         padding: 12px 16px;
@@ -184,36 +213,41 @@
     }
 }
 
-/* Light mobile drawer */
+/* =========================================
+   LIGHT MOBILE DRAWER
+========================================= */
 .mobile-navigation-drawer.drawer-light {
-    .navigation-bar-responsive {
-        background-color: #fff;
-        color: #222;
+.navigation-bar-responsive {
+background-color: #fff;
+color: #222;
+}
+
+.mobile-menu-top {
+    color: #222;
+}
+
+.MuiDivider-root {
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+.mobile-nav-link {
+    color: #222;
+
+    &::after {
+        background-color: #000;
     }
 
-    .mobile-menu-top {
-        color: #222;
-    }
-
-    .MuiDivider-root {
-        border-color: rgba(0, 0, 0, 0.12);
-    }
-
-    .mobile-nav-link {
-        color: #222;
-
-        &::after {
-            background-color: #8f123b;
-        }
-
-        &:hover {
-            color: #8f123b;
-            background-color: rgba(143, 18, 59, 0.06);
-        }
+    &:hover {
+        color: #000;
+        background-color: rgba(0, 0, 0, 0.05);
     }
 }
 
-/* Dark mobile drawer */
+}
+/* =========================================
+   DARK MOBILE DRAWER
+========================================= */
+
 .mobile-navigation-drawer.drawer-dark {
     .navigation-bar-responsive {
         background-color: #1e1e1e;
@@ -242,50 +276,90 @@
     }
 }
 
-/* Tablet and mobile */
+/* =========================================
+   TABLET AND MOBILE
+========================================= */
+
 @media (max-width: 899px) {
     #navigation {
         .navigation-bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
             min-height: 56px;
             padding: 0 12px;
-            gap: 6px;
+            gap: 8px;
+            box-sizing: border-box;
         }
 
+        /* Always show the mobile menu */
         .mobile-menu-button {
             display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            margin: 0;
+            padding: 8px;
         }
 
+        /* Hide desktop navigation */
         .desktop-nav-links {
             display: none;
         }
 
+        /* Keep theme toggle visible at the right */
         .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
             margin-left: auto;
-        }
-    }
-}
-
-/* Small phones */
-@media (max-width: 360px) {
-    #navigation {
-        .navigation-bar {
-            min-height: 52px;
-            padding: 0 8px;
-        }
-
-        .mobile-menu-button,
-        .theme-toggle {
+            margin-right: 0;
             padding: 8px;
         }
     }
 }
 
-/* Smooth scrolling */
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+    #navigation {
+        .navigation-bar {
+            min-height: 52px;
+            padding: 0 8px;
+            gap: 4px;
+        }
+
+        .mobile-menu-button,
+        .theme-toggle {
+            flex: 0 0 38px;
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            padding: 7px;
+        }
+    }
+}
+
+/* =========================================
+   SMOOTH SCROLLING
+========================================= */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Prevent headings from being hidden behind the fixed navbar */
+/* Prevent section headings hiding behind fixed navbar */
 #about,
 #expertise,
 #history,
@@ -294,12 +368,16 @@ html {
     scroll-margin-top: 80px;
 }
 
-/* Accessibility */
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
 
+    #navigation,
     #navigation .nav-link::after,
     .mobile-navigation-drawer .mobile-nav-link::after {
         transition: none;

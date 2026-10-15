@@ -1,16 +1,24 @@
 
+/* =========================================
+   MAIN / HERO SECTION
+========================================= */
+
 .dark-mode .about-section {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
 .about-section {
     display: flex;
-    gap: 30px;
-    justify-content: flex-start;
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+
     width: 100%;
-    padding: 0px 15%;
     min-height: 700px;
+    padding: 0 15%;
+    box-sizing: border-box;
+
     background-image: url("../images/bg-dark.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,41 +26,318 @@
     background-position: center;
 }
 
-.about-section .content {
-    text-align: left;
-    z-index: 2;
+/* =========================================
+   HERO CONTENT
+========================================= */
 
-    .social_icons {
+.about-section .content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    min-width: 0;
+
+    h1 {
+        font-size: 5em;
+        line-height: 1.15;
+        font-weight: 700;
+        margin-block: 0;
+        overflow-wrap: anywhere;
+    }
+
+    p {
+        font-size: 1.5em;
+        line-height: 1.5;
+        margin-block: 0;
+    }
+}
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.about-section .image-wrapper {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+
+    img {
+        display: block;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+/* =========================================
+   DESKTOP SOCIAL ICONS
+========================================= */
+
+.about-section .content .social_icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+    color: #222;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+        text-decoration: none;
+        transition:
+            color 0.25s ease,
+            transform 0.25s ease;
+
+        &:hover {
+            color: #5000ca;
+            transform: translateY(-2px);
+        }
+
+        &:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 4px;
+            border-radius: 3px;
+        }
+    }
+
+    svg {
+        font-size: 1.8em;
+    }
+
+    .resume-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 8px 16px;
+        border: 1px solid currentColor;
+        border-radius: 5px;
+
+        color: inherit;
+        font-size: 14px;
+        font-weight: 500;
+        white-space: nowrap;
+        text-decoration: none;
+
+        transition:
+            background-color 0.3s ease,
+            border-color 0.3s ease,
+            color 0.3s ease;
+
+        &:hover {
+            background-color: #5000ca;
+            border-color: #5000ca;
+            color: #fff;
+        }
+    }
+}
+
+/* =========================================
+   MOBILE SOCIAL ICONS
+========================================= */
+
+.about-section .content .mobile_social_icons {
+    display: none;
+}
+
+/* =========================================
+   ABOUT CONTENT
+========================================= */
+
+.about p {
+    text-align: center;
+    padding-top: 30%;
+    padding-bottom: 30%;
+}
+
+.about-content {
+    max-width: 750px;
+    margin-top: 30px;
+    color: #222;
+
+    h2 {
+        font-size: 2em;
+        line-height: 1.3;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: inherit;
+    }
+
+    p {
+        font-size: 1.05em;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        color: inherit;
+        opacity: 0.85;
+    }
+}
+
+/* =========================================
+   DARK THEME
+========================================= */
+
+.dark-mode .about-content {
+    color: #fff;
+}
+
+.dark-mode .about-section .content .social_icons {
+    color: #fff;
+}
+
+.dark-mode .about-section .content .mobile_social_icons {
+    color: #fff;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+    .about-section {
+        gap: 24px;
+        padding-left: 8%;
+        padding-right: 8%;
+        min-height: 600px;
+    }
+
+    .about-section .content {
+        h1 {
+            font-size: 3.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    }
+
+    .about-section .image-wrapper img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+    .container {
+        display: block;
+        width: 100%;
+    }
+
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 20px;
+
+        width: 100%;
+        min-height: auto;
+
+        padding: 120px 0 30px;
+        box-sizing: border-box;
+
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    /* Profile image */
+    .about-section .image-wrapper {
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .about-section .image-wrapper img {
+        width: 110px;
+        height: 110px;
+    }
+
+    /* Main text */
+    .about-section .content {
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
+        text-align: left;
+
+        h1 {
+            font-size: 2.5em;
+            line-height: 1.2;
+            margin: 0;
+            overflow-wrap: anywhere;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+    }
+
+    /* Hide desktop social row */
+    .about-section .content .social_icons {
+        display: none;
+    }
+
+    /* Show mobile social row */
+    .about-section .content .mobile_social_icons {
         display: flex;
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
         gap: 15px;
+
+        padding-top: 12px;
         color: #222;
 
         a {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             color: inherit;
             text-decoration: none;
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+
+            &:hover {
+                color: #5000ca;
+                transform: translateY(-2px);
+            }
+
+            &:focus-visible {
+                outline: 2px solid currentColor;
+                outline-offset: 4px;
+                border-radius: 3px;
+            }
         }
 
         svg {
-            font-size: 1.8em;
+            font-size: 1.7em;
         }
 
         .resume-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 8px 16px;
+
+            padding: 8px 14px;
             border: 1px solid currentColor;
             border-radius: 5px;
+
             color: inherit;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             white-space: nowrap;
             text-decoration: none;
-            transition: all 0.3s ease;
 
             &:hover {
                 background-color: #5000ca;
@@ -62,194 +347,111 @@
         }
     }
 
-    .mobile_social_icons {
-        display: none;
+    /* About description */
+    .about-content {
+        width: 90%;
+        margin: 24px auto 0;
+        box-sizing: border-box;
+
+        h2 {
+            font-size: 1.7em;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.7;
+        }
     }
 
-    p {
-        font-size: 1.5em;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-    }
-
-    h1 {
-        font-size: 5em;
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-    }
-}
-
-.about-section .image-wrapper {
-    z-index: 2;
-
-    img {
-        width: 150px;
-        border-radius: 50%;
+    .about p {
+        padding-top: 10%;
+        padding-bottom: 10%;
     }
 }
 
-.about p {
-    text-align: center;
-    padding-top: 30%;
-    padding-bottom: 30%;
-}
+/* =========================================
+   SMALL PHONES
+========================================= */
 
-@media screen {
-    @media (max-width: 567px) {
-        .nav-left {
-            padding-top: 20px;
-            float: left;
+@media (max-width: 380px) {
+    .about-section {
+        gap: 16px;
+        padding-top: 100px;
+        padding-bottom: 24px;
+    }
+
+    .about-section .image-wrapper img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .about-section .content {
+        h1 {
+            font-size: 2em;
+            line-height: 1.25;
         }
 
-        .nav-left img {
-            height: 35px;
+        p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+    }
+
+    .about-section .content .mobile_social_icons {
+        gap: 12px;
+        padding-top: 10px;
+
+        svg {
+            font-size: 1.5em;
         }
 
-        .nav-right {
-            float: right;
-        }
-
-        .nav-right li {
-            padding: 10px 15px;
-            list-style: none;
-            font-size: 13px;
-            color: white;
-            width: 10%;
-        }
-
-        .nav-right ul {
-            list-style-type: none;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        body {
-            width: 100%;
-        }
-
-        .about {
-            padding-left: 5%;
-            padding-right: 5%;
+        .resume-btn {
+            padding: 7px 10px;
             font-size: 12px;
         }
     }
 
-    @media (max-width: 768px) {
-        .about-section h1 {
-            font-size: 4em !important;
-            text-align: left;
+    .about-content {
+        h2 {
+            font-size: 1.5em;
         }
 
-        .about-section p {
-            text-align: left;
-        }
-
-        .container {
-            display: initial;
-        }
-
-        .about-section .content .social_icons {
-            display: none !important;
-        }
-
-        .about-section .content .mobile_social_icons {
-            padding-top: 10px;
-            display: flex !important;
-            flex-direction: row;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            color: #222;
-
-            a {
-                display: inline-flex;
-                align-items: center;
-                color: inherit;
-                text-decoration: none;
-            }
-
-            svg {
-                font-size: 1.8em;
-            }
-
-            .resume-btn {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                padding: 8px 16px;
-                border: 1px solid currentColor;
-                border-radius: 5px;
-                color: inherit;
-                font-size: 14px;
-                font-weight: 500;
-                white-space: nowrap;
-                text-decoration: none;
-                transition: all 0.3s ease;
-
-                &:hover {
-                    background-color: #5000ca;
-                    border-color: #5000ca;
-                    color: #fff;
-                }
-            }
-        }
-
-        .about-section {
-            padding-top: 150px;
-            display: block;
-            padding-left: 0px;
-            padding-right: 0px;
-        }
-
-        .about-section .content {
-            width: 90%;
-            padding-left: 5%;
-            padding-right: 5%;
-            padding-bottom: 5%;
-        }
-
-        .about-section .image-wrapper {
-            padding-left: 5%;
-            width: 100%;
+        p {
+            font-size: 0.95em;
         }
     }
 }
 
-/* About content */
-.about-content {
-    margin-top: 30px;
-    max-width: 750px;
-    color: #222;
+/* =========================================
+   ACCESSIBILITY
+========================================= */
 
-    h2 {
-        font-size: 2em;
-        font-weight: 600;
-        margin-bottom: 15px;
-        color: inherit;
-    }
-
-    p {
-        font-size: 1.05em !important;
-        line-height: 1.8;
-        margin-bottom: 15px !important;
-        color: inherit;
-        opacity: 0.85;
+@media (prefers-reduced-motion: reduce) {
+    .about-section .content .social_icons a,
+    .about-section .content .mobile_social_icons a,
+    .about-section .content .social_icons .resume-btn {
+        transition: none;
     }
 }
 
-/* Dark theme - About content */
-.dark-mode .about-content {
-    color: #fff;
-}
 
-/* Dark theme - Desktop social icons */
-.dark-mode .about-section .content .social_icons {
-    color: #fff;
-}
+/* Remove white line below mobile navbar */
+@media (max-width: 899px) {
+    #navigation {
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        margin: 0;
+        top: 0;
 
-/* Dark theme - Mobile social icons */
-@media (max-width: 768px) {
-    .dark-mode .about-section .content .mobile_social_icons {
-        color: #fff;
+        .navigation-bar {
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        &.scrolled {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2) !important;
+        }
     }
 }

@@ -43,6 +43,7 @@ function Main() {
           <h1>Vijayakumar K</h1>
           <p>Full-Stack Developer | Application Support Engineer</p>
 
+
           <div className="mobile_social_icons">
             <a
               href="https://github.com/Vijayakumar-22"
@@ -52,6 +53,7 @@ function Main() {
             >
               <GitHubIcon />
             </a>
+
             <a
               href="https://www.linkedin.com/in/vijayakumar-k93"
               target="_blank"
@@ -60,7 +62,16 @@ function Main() {
             >
               <LinkedInIcon />
             </a>
+
+            <a
+              href="/Vijayakumar_Resume.pdf"
+              download="Vijayakumar_Resume.pdf"
+              className="resume-btn"
+            >
+              Download Resume
+            </a>
           </div>
+
 
 
         </div>
