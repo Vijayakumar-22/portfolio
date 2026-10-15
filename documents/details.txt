@@ -1,0 +1,7 @@
+git add src/components/Expertise.tsx
+git commit -m "Fix unused icon import"
+git push origin main
+
+
+
+npm run build
