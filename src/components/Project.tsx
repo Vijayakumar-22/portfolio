@@ -1,14 +1,5 @@
 import React from "react";
-import mock01 from "../assets/images/mock01.png";
-import mock02 from "../assets/images/mock02.png";
-import mock03 from "../assets/images/mock03.png";
-import mock04 from "../assets/images/mock04.png";
-import mock05 from "../assets/images/mock05.png";
-import mock06 from "../assets/images/mock06.png";
-import mock07 from "../assets/images/mock07.png";
-import mock08 from "../assets/images/mock08.png";
-import mock09 from "../assets/images/mock09.png";
-import mock10 from "../assets/images/mock10.png";
+import agro from "../assets/images/agro.png";
 import "../assets/styles/Project.scss";
 
 function Project() {
@@ -20,7 +11,7 @@ function Project() {
                 <div className="project">
                     <div className="project-image">
                         <img
-                            src={mock01}
+                            src={agro}
                             className="zoom"
                             alt="Agro Connect project preview"
                         />

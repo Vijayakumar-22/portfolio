@@ -1,6 +1,7 @@
 import React from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import avatar from "../assets/images/me.webp";
 import "../assets/styles/Main.scss";
 
 function Main() {
@@ -8,7 +9,7 @@ function Main() {
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <img src="#" alt="Avatar" />
+          <img src={avatar} alt="Avatar" />
         </div>
 
         <div className="content">
