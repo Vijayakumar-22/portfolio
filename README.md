@@ -12,75 +12,41 @@ View the [Demo](https://yujisatojr.github.io/react-portfolio-template/).
 
 ![screenshot](./src/assets//images/screenshot.png)
 
-## Features
+# Developer Portfolio
 
-✅ Open source (free to use, no attribution required)  
-✅ Responsive design & mobile-friendly  
-✅ Supports both dark and light modes  
-✅ Highly customizable multi-component layout  
-✅ Built with modern technologies (React, TypeScript, JavaScript, and SCSS)  
+## Run Locally
 
-## Quick Setup
+### 1. Install Node.js
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed. Check your installation by running:
+Install [Node.js](https://nodejs.org/) if it is not already installed.
 
-    ```bash
-    node -v
-    ```
+Verify the installation:
 
-2. In the project directory, install dependencies:
+```bash
+node -v
+npm -v
+```
 
-    ```bash
-    npm install
-    ```
+### 2. Install Dependencies
 
-3. Start the development server:
+Open a terminal in the project folder and run:
 
-    ```bash
-    npm start
-    ```
+```bash
+npm install
+```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+### 3. Start the Development Server
 
-5. Customize the template by navigating to the `/src/components` directory. Modify texts, pictures, and other information as needed.
+```bash
+npm start
+```
 
-The page will reload if you make edits, and you will see any lint errors in the console.
+### 4. View Your Portfolio
 
-If you are interested in creating a mockup image like the ones from the personal projects section, I recommend [Genmoo](https://gemoo.com/tools/browser-mockup-generator/). This website lets you generate sleek looking browser mockups for free.
+Open the local URL shown in your terminal, usually:
 
-## Deployment
+http://localhost:3000
 
-You can choose your preferred service (e.g., [Netlify](https://www.netlify.com/), [Render](https://render.com/), [Heroku](https://www.heroku.com/)) for deployment. One of the easiest ways to host this portfolio is using GitHub Pages. Follow the instructions below for a production deploy.
+### 5. Customize Your Portfolio
 
-1. **Set Up GitHub Repository**
-
-    Create a new repository on GitHub for your portfolio app.
-
-2. **Configure `package.json`**
-
-    Edit the following properties in your `package.json` file:
-
-    ```json
-    {
-        "homepage": "https://yourusername.github.io/your-repo-name",
-        "scripts": {
-            "predeploy": "npm run build",
-            "deploy": "gh-pages -d build",
-            ...
-        }
-    }
-    ```
-
-    Replace `yourusername` with your GitHub username and `your-repo-name` with the name of your GitHub repository.
-
-3. **Deploy to GitHub Pages**
-
-    Run the following command to deploy your app:
-
-    ```bash
-    npm run deploy
-    ```
-
-4. **Access Your Deployed App**
-
-    After successfully deploying, you can access your app at `https://yourusername.github.io/your-repo-name`.
+Edit the files inside `src/components` to update your personal information, skills, experience, and projects.
