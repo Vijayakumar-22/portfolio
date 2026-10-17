@@ -21,20 +21,25 @@ function Project() {
                         <h2>Agro Connect</h2>
 
                         <p>
-                            Developed a web application to connect farmers with customers,
-                            helping improve access to agricultural products and simplify
-                            product discovery.
+                            Developed a full-stack web application connecting farmers
+                            and consumers, featuring product management, responsive
+                            interfaces, and secure REST API integration. Implemented
+                            CRUD operations, input validation, and optimized database
+                            queries to improve application reliability and data integrity.
                         </p>
 
                         <div className="project-technologies">
                             <span>React.js</span>
+                            <span>TypeScript</span>
                             <span>Node.js</span>
                             <span>Express.js</span>
-                            <span>Database</span>
+                            <span>MySQL</span>
+                            <span>REST APIs</span>
+                            <span>GitHub Actions CI/CD</span>
                         </div>
 
                         <a
-                            href="https://github.com/your-username/agro-connect"
+                            href="3"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="project-button"
